@@ -3,19 +3,19 @@
   <div v-if="!item.hidden">
     <!-- 如果没有子路由 -->
     <template v-if="!item.children">
-        <el-menu-item :key="item.path" :index="resolvePath(item.path)">
+        <ur-menu-item :key="item.path" :index="resolvePath(item.path)">
           <i :class="item.meta.icon"></i>
           <span>{{item.meta.title}}</span>
-        </el-menu-item>
+        </ur-menu-item>
     </template>
     <!-- 如果有子路由，渲染子菜单 -->
-    <el-submenu v-else :index="resolvePath(item.path)">
+    <ur-submenu v-else :index="resolvePath(item.path)">
       <template #title>
           <i :class="item.meta.icon"></i>
           <span>{{item.meta.title}}</span>
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :item="child" :basePath="resolvePath(item.path)" />
-    </el-submenu>
+    </ur-submenu>
   </div>
 </template>
 

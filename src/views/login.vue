@@ -1,13 +1,13 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
+    <ur-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" label-width="4.1rem" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Vuex-Router-Webpack</h3>
+        <h3 class="title">UnrealUI-Admin</h3>
       </div>
 
-      <el-form-item prop="username">
-        <el-input
+      <ur-form-item prop="username" label="用户名">
+        <ur-input
           ref="username"
           v-model="loginForm.username"
           placeholder="Username"
@@ -16,10 +16,10 @@
           tabindex="1"
           auto-complete="on"
         />
-      </el-form-item>
+      </ur-form-item>
 
-      <el-form-item prop="password">
-        <el-input
+      <ur-form-item prop="password" label="密码　">
+        <ur-input
           :key="passwordType"
           ref="password"
           v-model="loginForm.password"
@@ -30,11 +30,11 @@
           auto-complete="on"
           @keyup.enter.native="handleLogin"
         />
-      </el-form-item>
+      </ur-form-item>
 
-      <el-button :loading="loading" type="success" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+      <ur-button class="login_button" :loading="loading" @click.native.prevent="handleLogin">Login</ur-button>
 
-    </el-form>
+    </ur-form>
   </div>
 </template>
 
@@ -81,8 +81,16 @@ h3 {
   text-align: center;
 }
 .login-container {
-  transform: translateY(50%);
   width: 300px;
+  padding: 2rem;
+  margin: 14rem auto;
+  border: 0.0625rem solid #d1d9e6;
+  border-radius: 0.55rem;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+}
+.login_button {
+  width: 8rem;
+  display: block;
   margin: 0 auto;
 }
 </style>

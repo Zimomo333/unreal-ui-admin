@@ -7,11 +7,19 @@ export const routes = [
     path: '/',     // 转义 / ，防止自动省略为空
     component: () => import('./views/home.vue'),
     meta: { 
-      title: '首页',
+      title: '',
       icon: 'el-icon-s-order'
     },
     hidden: true,
     children: [
+      {
+        path: '/index',
+        component: () => import('./views/index.vue'),
+        meta: { 
+          title: '首页',
+          icon: 'el-icon-user-solid'
+        }
+      },
       { 
         path: '/info',
         component: () => import('./views/info.vue'),
@@ -24,7 +32,7 @@ export const routes = [
         path: '/orders',        // 以 / 开头的嵌套路径会被当作根路径
         component: () => import('./views/orders/index.vue'),    // 可写成{render: (e) => e("router-view")}，避免新建空router-view文件
         meta: { 
-            title: '订单管理',
+            title: '信息管理',
             icon: 'el-icon-s-order'
         },
         children: [
@@ -32,7 +40,7 @@ export const routes = [
             path: 'my-orders',      // 子路由不要加 /
             component: () => import('./views/orders/myOrders.vue'),
             meta: { 
-                title: '我的订单',
+                title: '表格',
                 icon: 'el-icon-s-order'
             }
           },

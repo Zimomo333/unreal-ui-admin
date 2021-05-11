@@ -90,16 +90,11 @@ export default {
 <style lang="scss">
 header {
   box-sizing: border-box;
-  position: absolute;
   width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 1.8rem;
-  border-bottom: 0.1rem solid #d1d9e6;
   white-space: nowrap;
 
   .logo {
@@ -154,18 +149,19 @@ header {
   top: 6.4rem;
   bottom: 0;
   left: 0;
-  margin: 0 0 0 1.5rem;
-  padding: 1.5rem 1.4rem 0 0;
+  padding: 1.5rem 1.4rem 0 1.5rem;
   width: 15rem;
   border-right: 0.1rem solid #d1d9e6;
-
+  border-top: 0.1rem solid #d1d9e6;
+  
   span {
     font-size: 1rem;
   }
 }
 .content {
-  margin-left: 22rem;
-  padding-top: 10.5rem;
+  border-top: 0.1rem solid #d1d9e6;
+  margin-left: 18rem;
+  padding: 4.5rem 4.5rem 0;
   width: 90rem;
 }
 </style>

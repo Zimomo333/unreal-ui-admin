@@ -100,8 +100,8 @@
         </ur-form-item>
         <ur-form-item label="性别">
           <ur-radio-group v-model="form.sex">
-            <ur-radio label="GG">GG</ur-radio>
-            <ur-radio label="MM">MM</ur-radio>
+            <ur-radio label="Man">Man</ur-radio>
+            <ur-radio label="Lady">Lady</ur-radio>
           </ur-radio-group>
         </ur-form-item>
         <ur-form-item label="年龄">
@@ -147,7 +147,7 @@ export default {
       dialogFormVisible: false,
       info: {
         name: 'Zimomo',
-        sex: 'GG',
+        sex: 'Man',
         age: 22,
         tags: [
           { name: 'Vue', type: 'success' },
@@ -263,7 +263,7 @@ export default {
 
     .sex {
       font-size: 2rem;
-      margin: 1rem 0.5rem 1.5rem;
+      margin: 1rem 0 1.5rem;
       span {
         margin-right: 2rem;
       }

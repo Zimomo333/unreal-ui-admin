@@ -59,7 +59,7 @@ export default {
   }
   .data_visual {
     position: relative;
-    width: 30rem;
+    width: 33rem;
     float: right;
     .visit {
       flex: 1;

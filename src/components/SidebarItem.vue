@@ -1,17 +1,17 @@
 <template>
   <!-- 隐藏不需要显示的路由 -->
-  <div v-if="!item.hidden">
+  <div v-if="!item.hidden" class="sidebar_item">
     <!-- 如果没有子路由 -->
     <template v-if="!item.children">
         <ur-menu-item :key="item.path" :index="resolvePath(item.path)">
-          <i :class="item.meta.icon"></i>
+          <i class="icon" v-html="item.meta.icon"></i>
           <span>{{item.meta.title}}</span>
         </ur-menu-item>
     </template>
     <!-- 如果有子路由，渲染子菜单 -->
     <ur-submenu v-else :index="resolvePath(item.path)">
       <template #title>
-          <i :class="item.meta.icon"></i>
+          <i class="icon" v-html="item.meta.icon"></i>
           <span>{{item.meta.title}}</span>
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :item="child" :basePath="resolvePath(item.path)" />
@@ -42,3 +42,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.sidebar_item {
+  .icon {
+    position: relative;
+    top: -.2rem;
+  }
+}
+</style>

@@ -39,7 +39,7 @@
     <ur-dialog title="编辑信息" v-model="dialogFormVisible">
       <ur-form class="form" :model="form">
         <ur-form-item label="ID　" :label-width="400">
-          <ur-input class="id_style" disabled v-model="form.id" autocomplete="off"></ur-input>
+          <ur-input class="id_style" readonly v-model="form.id" autocomplete="off"></ur-input>
         </ur-form-item>
         <ur-form-item label="日期">
           <ur-date-picker
@@ -145,6 +145,10 @@ export default {
     },
     handleDelete(index) {
       this.tableData.splice(index, 1);
+      this.$notify({
+        title: '删除成功',
+        message: '删除成功！',
+      });
     },
     handleSizeChange(val) {
       this.pageSize = val;
@@ -160,6 +164,10 @@ export default {
       }
       this.tableData[this.editIndex] = this.form;
       this.dialogFormVisible = false;
+      this.$notify({
+        title: '编辑成功',
+        message: '编辑成功！',
+      });
     }
   },
 };

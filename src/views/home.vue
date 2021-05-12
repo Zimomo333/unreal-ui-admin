@@ -42,7 +42,7 @@
       </div>
     </header>
     <aside class="sidebar">
-      <ur-menu :default-active="$route.path" :collapse="isCollapse" router>
+      <ur-menu :default-active="$route.path" router>
         <sidebar-item v-for="route in routes[0].children" :key="route.path" :item="route" />
       </ur-menu>
     </aside>
@@ -63,7 +63,6 @@ export default {
   },
   data() {
     return {
-      isCollapse: false,
       routes,
     };
   },

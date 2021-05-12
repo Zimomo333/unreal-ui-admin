@@ -182,10 +182,6 @@ export default {
         }
       });
     },
-    handleRadio() {
-      this.radio = false;
-      console.log('🚀 ~ handleRadio ~ this.radio', this.radio);
-    },
   },
 };
 </script>

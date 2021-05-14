@@ -248,7 +248,6 @@ export default {
     .textarea {
       margin: 2rem 0 0;
       width: 40rem;
-      height: 30rem;
     }
 
     .space {
